@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>  LOVE METER 2020  </title>
+<link href="bootstrap.css" rel="stylesheet"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="flames.js" type="text/javascript" ></script>
+<style type="text/css">
+input{ 
+display: block; 
+padding-bottom: 20px;
+font-size: 30px; 
+font-family: cursive;
+background-color: pink;
+color: orchid;
+}
+
+div{ 
+margin: auto ;
+width: 500px;
+background-color: purple;
+
+} 
+h3 { 
+color: red; 
+font-style: oblique; 
+font-family: cursive;
+font-size: 100px;
+
+}
+
+button{ 
+background-color: red;
+width: 500px;
+height: 50px;
+font-size: 20px;  
+font-family: cursive;
+
+}
+button:hover{ 
+background-color: pink; 
+color: red; 
+
+
+}
+body{ 
+background: url(sunset.jpg) no-repeat fixed;
+background-size: cover;
+}
+
+
+marquee{
+font-family: cursive;
+font-size: 30px; 
+font-style: inherit;
+color: red;
+
+}
+</style>
+</head> 
+
+<body>
+<div> 
+<center> <h3>   <span style="color:orange;">F</span><span style="color:red;">L</span><span style="color:violet;">A</span><span style="color:red;">M</span><span style="color:green;">E</span><span style="color:pink;">S</span>   </h3>  </center> 
+<marquee bgcolor="yellow" scrolldelay="0.5" style="font-size=20px; " style="color:red;" height="50px">WELCOME TO LOVE TEST 2020</marquee> 
+<br> 
+<br>
+<center> <input id="s1" placeholder="Your Name"/> </center>   
+<br> 
+<br> 
+
+
+<center> <input id="s2" placeholder="Partner's name"/> </center> 
+<br> 
+<br>
+
+<center> <button id="check" onclick="main()"><img style="width:20px ; height:20px; " src="heart.jpg" alt="">  RESULT <img style="width:20px ; height:20px; " src="heart.jpg" alt=""> </button> </center>
+ 
+<span id="result" style="font-family: cursive; font-size: 20px; margin:auto; width: 500px; " ></span>
+<span id="symbol"></span>
+<br> 
+<br> 
+<button id="reset" style="display:none;"  onclick="reset()" >RESET</button>
+</div> 
+
+</body>
+</html>

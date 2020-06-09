@@ -1,0 +1,144 @@
+function main() 
+{
+   var s1 = document.getElementById("s1").value;
+   var s2 = document.getElementById("s2").value;
+   
+   console.log(s1); 
+   console.log(s2);
+   var flames = [] ;
+    var i,j ; 
+    var status=[] ;
+    
+ 
+    for(i=0;i<s2.length;i++)
+    {
+    
+        status[i]=0 ;
+        
+     }
+     
+    for(i = 0 ;i < 6 ; i++)
+   {
+     flames[i]=0 ;   
+   } 
+     
+     
+    var count=0; 
+   for(i=0;i<s1.length; i++)
+   {
+       var ch = s1[i];
+       for(j=0;j<s2.length;j++)
+       {
+            if(s2[j] == ch && status[j] == 0)
+            {
+               count++ ;
+               status[j]=1 ;
+               break;
+          
+       
+            }   
+       }       
+   } 
+  
+   var c= countones(status);
+   var flamescount = (s1.length - count) + (s2.length - c) ;
+  
+   var s=0 ;
+   
+   while(countzeroes(flames) != 1)
+   {
+       var cnt = 0;
+       while(true)
+       {
+           
+           if(flames[s] == 0)
+           cnt ++ ;
+           if(cnt >= flamescount)
+           break;
+           
+           else if((s + 1) > 5)
+           s = 0 ;
+           else 
+           s++ ;
+                   
+       }
+       flames[s]=1;
+      
+       s=s+1;
+      
+    }
+   var lst=["FRIENDSHIP","LOVE","AFFAIR","MARRIAGE","ENEMY","SISTER"]; 
+    
+   console.log(flames);
+   for(i = 0;i<6 ;i++)
+   {
+      if(flames[i]== 0)
+      {
+          pos = i;
+          break;
+      }
+   }
+   var res=lst[pos];
+   var color="" ;
+   
+   
+   if(res == "FRIENDSHIP")
+   color="orange" ; 
+   
+  
+   else if(res == "LOVE")
+   color = "red";
+    
+   else if(res == "AFFAIR")
+   color = "pink" ;
+   else if(res == "MARRIAGE")
+   color = "red" ;
+   else if(res == "ENEMY")
+   color = "green" ;
+   else if(res == "SISTER")
+   color = "violet" ;
+   document.getElementById("result").style.backgroundColor= color ; 
+   document.getElementById("result").style.color ="yellow" ;
+   document.getElementById("result").textContent=res;
+   document.getElementById("reset").style.display="block" ;
+   document.getElementById("check").style.display="none" ;
+   
+   
+     
+}
+
+
+
+function countones(arr)
+{
+     var count = 0 ;
+     for(var i = 0 ;i< arr.length;i++)
+     {
+     
+      if(arr[i] == 1)
+      count++ ;     
+     }
+    return count;      
+
+
+}
+
+function countzeroes(arr)
+{
+     var count = 0 ;
+     for(var i = 0 ;i< 6 ;i++)
+     {
+     
+      if(arr[i] == 0)
+      count++ ;     
+     }
+    return count;      
+
+
+}
+function reset(){
+   location.reload();
+ 
+
+}
+
